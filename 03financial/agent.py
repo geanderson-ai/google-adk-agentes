@@ -1,9 +1,6 @@
-from dis import Instruction
 from dotenv import load_dotenv
-import os
 from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent
 from google.adk.tools import google_search
-from adkviz.adkviz import visualize_agent_flow
 
 load_dotenv()
 
@@ -98,5 +95,3 @@ root_agent = SequentialAgent(
     description="Um agente sequencial que pesquisa FIIs, analisa os dados e gera um relatório.",
     sub_agents=[pesquisador_financeiro, analista_financeiro, redator_relatorio],
 )
-
-visualize_agent_flow(root_agent)
